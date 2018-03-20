@@ -17,10 +17,8 @@ describe('wrap', () => {
 		expect(wrap('Dog cat bat dog cat bat', 10)).to.equal(
 			'Dog cat \nbat dog \ncat bat'
 		)
-	})
-	it('Adds a line break at the beginning of a word if maxLength is in the middle of a word', () => {
-		expect(wrap('Gooby went for a walk with Molly', 8)).to.equal(
-			'Dog cat \nbat dog \ncat bat'
+		expect(wrap('Gooby went for a walk with Molly', 4)).to.equal(
+			'Gooby \nwent \nfor a \nwalk \nwith \nMolly'
 		)
 	})
 })
