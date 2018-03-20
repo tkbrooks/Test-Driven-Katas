@@ -13,4 +13,14 @@ describe('wrap', () => {
 			'Dog cat bat \ndog cat bat'
 		)
 	})
+	it('Adds a line break at the beginning of a word if maxLength is in the middle of a word', () => {
+		expect(wrap('Dog cat bat dog cat bat', 10)).to.equal(
+			'Dog cat \nbat dog \ncat bat'
+		)
+	})
+	it('Adds a line break at the beginning of a word if maxLength is in the middle of a word', () => {
+		expect(wrap('Gooby went for a walk with Molly', 8)).to.equal(
+			'Dog cat \nbat dog \ncat bat'
+		)
+	})
 })
