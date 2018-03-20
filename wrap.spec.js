@@ -17,8 +17,18 @@ describe('wrap', () => {
 		expect(wrap('Dog cat bat dog cat bat', 10)).to.equal(
 			'Dog cat \nbat dog \ncat bat'
 		)
-		expect(wrap('Gooby went for a walk with Molly', 4)).to.equal(
+		expect(wrap('Gooby went for a walk with Molly', 8)).to.equal(
 			'Gooby \nwent \nfor a \nwalk \nwith \nMolly'
+		)
+	})
+	it('Adds a line break if maxLength is shorter than all words', () => {
+		expect(wrap('Dog cat bat dog cat bat', 2)).to.equal(
+			'Dog \ncat \nbat \ndog \ncat \nbat'
+		)
+	})
+	it('Returns the string if there are no spaces and maxLength is less than word length', () => {
+		expect(wrap('Dogcatbatdogcatbat', 2)).to.equal(
+			'Dogcatbatdogcatbat'
 		)
 	})
 })
